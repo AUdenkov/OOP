@@ -4,11 +4,7 @@ public class Engine {
     private String brend;
     private int number;
     private int power;
-    
-    public Engine(){
-        
-    }
-    
+
     public Engine(String brend, int number, int power){
         this.brend=brend;
         this.number=number;
