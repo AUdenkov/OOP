@@ -3,22 +3,22 @@ package com.company.details;
 import java.util.Scanner;
 
 public class Transmission {
-    private byte numberOfGears;
-    private byte stateNumberOfGears = 0;
+    private int numberOfGears;
+    private int stateNumberOfGears = 0;
 
-    public Transmission(byte numberOfGears) {
-        this.numberOfGears=numberOfGears;
+    public Transmission(int numberOfGears) {
+        this.numberOfGears = numberOfGears;
     }
 
     public void setNumberOfGears(byte numberOfGears) {
         this.numberOfGears = numberOfGears;
     }
 
-    public byte getNumberOfGears() {
+    public int getNumberOfGears() {
         return this.numberOfGears;
     }
 
-    public byte getStateNumberOfGears() {
+    public int getStateNumberOfGears() {
         return this.stateNumberOfGears;
     }
 
@@ -34,6 +34,8 @@ public class Transmission {
                 this.stateNumberOfGears--;
                 break;
         }
+        System.out.println(stateNumberOfGears);
+
     }
 
 }

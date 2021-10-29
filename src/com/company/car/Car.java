@@ -45,9 +45,18 @@ public class Car {
         return this.number;
     }
 
+    public void refill() {
+        gasTank.refill();
+    }
+
     public GasTank getGasTank() {
         return gasTank;
     }
+
+    public Transmission getTransmission() {
+        return transmission;
+    }
+
 
     public void startCar() {
         if (gasTank.getState() == 0) {
@@ -57,14 +66,28 @@ public class Car {
             transmission.changeNumberOfGears();
             System.out.println("started moving");
             System.out.println("car move with number of  gears " + transmission.getStateNumberOfGears());
+            int x = getGasTank().getState() - (5 * getTransmission().getStateNumberOfGears());
+            getGasTank().setState(x);
+        }
+    }
+
+    public void changeNumberOfGears() {
+        transmission.changeNumberOfGears();
+        if (transmission.getStateNumberOfGears() > 1) {
+            int state = (gasTank.getState() - (5 * transmission.getStateNumberOfGears()));
+            gasTank.setState(state);
         }
     }
 
     public void stopCar() {
         System.out.println("stopped");
+        engine.stopEngine();
+        System.out.println("You fill"+ gasTank.getState());
     }
 
     public void turnCar() {
+        int change=gasTank.getState()-5;
+        gasTank.setState(change);
         System.out.println("Car turned");
     }
 }

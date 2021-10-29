@@ -36,10 +36,10 @@ public class Engine {
     }
 
     public void startEngine(){
-        System.out.println("GO_GO");
+        System.out.println("start engine");
     }
 
     public void stopEngine(){
-        System.out.println("stop");
+        System.out.println("stop engine");
     }
 }
